@@ -60,3 +60,6 @@
     width: 50%;
     align-self: center;
 }
+.encrypt-zone input{
+    display: none;
+}
