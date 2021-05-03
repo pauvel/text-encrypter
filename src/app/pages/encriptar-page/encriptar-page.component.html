@@ -10,7 +10,7 @@
     </section>
     <section class="encrypt-zone">
         <label for="algoritmo">Algoritmo a útilizar:
-            <select name="algoritmo" id="algoritmo">
+            <select name="algoritmo" id="algoritmo" #algorithm (change)="setAlgorithm(algorithm.value)">
                 <option value="rijndael">Rijndael</option>
                 <option value="tripledes">Triple DES</option>
                 <option value="rc2">RC2</option>
@@ -19,16 +19,40 @@
         <div class="areas">
             <div class="area-encriptar">
                 <span>A encriptar:</span>
-                <textarea name="a-encriptar" id="" cols="70" rows="10">{{this.contenidoTxt}}</textarea>
-                <input class="green-button" type="file" accept=".txt" (change)="onChange($event.target.files)">
+                <div class="options">
+                    <label for="key">Llave:<input disabled type="text" name="key" id="key" placeholder="Auto generada"></label>
+                    <label for="iv">IV:<input disabled type="text" name="key" id="iv" placeholder="Auto generada"></label>
+                </div>
+                <textarea disabled name="a-encriptar" id="" cols="70" rows="10">{{this.contenidoTxt}}</textarea>
+                <input class="green-button" type="file" accept=".txt" (change)="onChangeTextFile($event.target.files)">
                 <button class="green-button" (click)="getArchive()">Cargar archivo</button>
-                <button class="blue-button">Encriptar</button>
+                <button class="blue-button" (click)="encrypt()">Encriptar</button>
             </div>
             
             <div class="area-encriptar">
                 <span>Encriptado:</span>
-                <textarea name="encriptado" id="" cols="70" rows="10"></textarea>
-                <button class="blue-button">Copiar encriptado</button>
+                <textarea #tenc disabled name="encriptado" id="" cols="70" rows="18">{{this.excriptadoTxt}}</textarea>
+                <button class="blue-button" (click)="copiarTexto(tenc.value)">Copiar encriptado</button>
+            </div>
+        </div>
+        <section class="title-decrypt">
+            DECRIPTAR
+        </section>
+        <div class="areas">
+            <div class="area-encriptar">
+                <span>Encriptado:</span>
+                <div class="options">
+                    <label for="keyDE">Llave:<input disabled type="textDE" name="keyDE" id="keyDE" placeholder="Auto generada"></label>
+                    <label for="ivDE">IV:<input disabled type="textDE" name="keyDE" id="ivDE" placeholder="Auto generada"></label>
+                </div>
+                <textarea id="decryptArea" cols="70" rows="10"></textarea>
+                <button class="green-button" (click)="decrypt()">Decriptar</button>
+            </div>
+            
+            <div class="area-encriptar">
+                <span>Texto plano:</span>
+                <textarea #tplain disabled name="encriptado" id="" cols="70" rows="18">{{this.contenidoTxtDE}}</textarea>
+                <button (click)="copiarTexto(tplain.value)" class="blue-button">Copiar texto</button>
             </div>
         </div>
     </section>
