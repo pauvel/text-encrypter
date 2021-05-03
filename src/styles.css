@@ -4,3 +4,52 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+body{
+    background: rgb(170, 198, 255);
+}
+
+.green-button{
+    padding: 1em;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+    background-color: green;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.1em;
+    border-radius: 10px;
+    box-shadow: 1px 1px 2px 0px black;
+    transition: all 0.5s ease-in-out;
+}
+.green-button:hover{
+    opacity: 70%;
+}
+.blue-button{
+    padding: 1em;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+    background-color: rgb(0, 47, 128);
+    outline: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.1em;
+    border-radius: 10px;
+    box-shadow: 1px 1px 2px 0px black;
+    transition: all 0.5s ease-in-out;
+}
+.blue-button:hover{
+    opacity: 70%;
+}
+
+.title{
+    font-size: 2.3em;
+    font-weight: 400;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: rgb(31, 77, 243);
+    text-shadow: 1px 1px 3px black;
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+

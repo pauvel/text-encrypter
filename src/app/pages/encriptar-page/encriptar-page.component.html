@@ -1,0 +1,34 @@
+<div class="main">
+    <section class="title">
+        ENCRIPTAR ARCHIVO DE TEXTO
+    </section>
+    <section class="information">
+        <p>
+            Seleccione un archivo de texto plano de su equipo
+            para encriptarlo.
+        </p>
+    </section>
+    <section class="encrypt-zone">
+        <label for="algoritmo">Algoritmo a útilizar:
+            <select name="algoritmo" id="algoritmo">
+                <option value="rijndael">Rijndael</option>
+                <option value="tripledes">Triple DES</option>
+                <option value="rc2">RC2</option>
+            </select>
+        </label>
+        <div class="areas">
+            <div class="area-encriptar">
+                <span>A encriptar:</span>
+                <textarea name="a-encriptar" id="" cols="70" rows="10"></textarea>
+                <button class="green-button">Cargar archivo</button>
+                <button class="blue-button">Encriptar</button>
+            </div>
+            
+            <div class="area-encriptar">
+                <span>Encriptado:</span>
+                <textarea name="encriptado" id="" cols="70" rows="10"></textarea>
+                <button class="blue-button">Copiar texto</button>
+            </div>
+        </div>
+    </section>
+</div>

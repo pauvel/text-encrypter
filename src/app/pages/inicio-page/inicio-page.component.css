@@ -1,0 +1,16 @@
+.main{
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    padding-bottom: 100vh;
+}
+.information{
+    align-self: center;
+    width: 50%;
+    text-align: justify;
+    padding-bottom: 2em;
+}
+button{
+    align-self: center;
+    width: 20%;
+}
