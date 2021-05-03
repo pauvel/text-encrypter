@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Renderer2 } from '@angular/core';
 
 @Component({
   selector: 'app-encriptar-page',
@@ -7,9 +7,29 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EncriptarPageComponent implements OnInit {
 
-  constructor() { }
+  contenidoTxt:string = '';
+
+  constructor(
+  ) { }
+
+
 
   ngOnInit(): void {
+  }
+
+  getArchive(){
+    const fileChooser = <HTMLInputElement>document.querySelector('input[type="file"]');
+    fileChooser.click();
+  }
+
+  onChange(files:FileList):void{
+    let file = files[0];
+    let fileReader: FileReader = new FileReader();
+    let self = this;
+    fileReader.onloadend = function(x) {
+      self.contenidoTxt = fileReader.result.toString().trim();
+    }
+    fileReader.readAsText(file);
   }
 
 }

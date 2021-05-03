@@ -19,15 +19,16 @@
         <div class="areas">
             <div class="area-encriptar">
                 <span>A encriptar:</span>
-                <textarea name="a-encriptar" id="" cols="70" rows="10"></textarea>
-                <button class="green-button">Cargar archivo</button>
+                <textarea name="a-encriptar" id="" cols="70" rows="10">{{this.contenidoTxt}}</textarea>
+                <input class="green-button" type="file" accept=".txt" (change)="onChange($event.target.files)">
+                <button class="green-button" (click)="getArchive()">Cargar archivo</button>
                 <button class="blue-button">Encriptar</button>
             </div>
             
             <div class="area-encriptar">
                 <span>Encriptado:</span>
                 <textarea name="encriptado" id="" cols="70" rows="10"></textarea>
-                <button class="blue-button">Copiar texto</button>
+                <button class="blue-button">Copiar encriptado</button>
             </div>
         </div>
     </section>
